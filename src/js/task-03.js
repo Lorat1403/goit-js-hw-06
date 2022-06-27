@@ -18,7 +18,6 @@ gallery.style.listStyle = "none";
 
 const imgGallery = images
   .map(({ url, alt }) => {
-    // console.log(alt);
     return `<li><img src='${url}'; alt='${alt}'; width="420"></li>`;
   })
   .join(" ");
