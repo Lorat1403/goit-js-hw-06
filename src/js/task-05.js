@@ -1,7 +1,14 @@
-const textInput = document.querySelector("#name-input");
-const output = document.querySelector("#name-output");
-console.log(output.textContent);
+const refs = {
+  input: document.querySelector("#name-input"),
+  output: document.querySelector("#name-output"),
+};
 
-textInput.addEventListener("input", function (event) {
-  output.textContent = event.currentTarget.value;
-});
+refs.input.addEventListener("input", onInputChange);
+
+function onInputChange(event) {
+  if (event.currentTarget.value === "") {
+    refs.output.textContent = "Anonymous";
+  } else {
+    refs.output.textContent = event.currentTarget.value;
+  }
+}
